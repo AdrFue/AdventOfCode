@@ -6,7 +6,7 @@ inputs = []
 
 with open(dir + "/input.txt", "r") as f:
     for line in f:
-        inputs.append(line.strip())
+      inputs.append(line.strip())
 
 inpSplits = []
 for input in inputs:
