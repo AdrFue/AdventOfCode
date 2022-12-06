@@ -34,3 +34,27 @@ for cmd in cmds:
 
 for crate in crates:
   print(crate[len(crate)-1], end='')
+print()
+
+## Teil 2 ##
+
+crates = [
+  ["H", "C", "R"],
+  ["B", "J", "H", "L", "S", "F"],
+  ["R", "M", "D", "H", "J", "T", "Q"],
+  ["S", "G", "R", "H", "Z", "B", "J"],
+  ["R", "P", "F", "Z", "T", "D", "C", "B"],
+  ["T", "H", "C", "G"],
+  ["S", "N", "V", "Z", "B", "P", "W", "L"],
+  ["R", "J", "Q", "G", "C"],
+  ["L", "D", "T", "R", "H", "P"," F", "S"]
+]
+
+for cmd in cmds:
+  crateMover = crates[cmd[1]][-cmd[0]:]
+  del crates[cmd[1]][-cmd[0]:]
+  for crate in crateMover:
+    crates[cmd[2]].append(crate)
+
+for crate in crates:
+  print(crate[len(crate)-1], end='')
