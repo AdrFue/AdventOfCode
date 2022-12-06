@@ -36,6 +36,7 @@ for crate in crates:
   print(crate[len(crate)-1], end='')
 print()
 
+
 ## Teil 2 ##
 
 crates = [
