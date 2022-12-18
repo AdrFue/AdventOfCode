@@ -47,7 +47,7 @@ for row in vtArray:
   row.reverse()
 visibleTrees += getVisiblesTrees(forest, vtArray)
 
-# transpose forest --> counting right to left
+# transpose and reverse forest --> counting right to left
 print("right to left ------------------")
 forest = np.array(forest).T.tolist()
 vtArray = np.array(vtArray).T.tolist()
@@ -59,6 +59,44 @@ visibleTrees += getVisiblesTrees(forest, vtArray)
 print(visibleTrees)
 
 
+## Teil 2 ##
 
+bestScenic = 0
 
+for row in range(len(forest)):
+  for column in range(len(forest[row])):
 
+    curLeft = 0
+    curRight = 0
+    curTop = 0
+    curBottom = 0
+
+    if row != 0:
+      for cRow in range(row-1, -1, -1):
+        curLeft += 1
+        if forest[row][column] <= forest[cRow][column]:
+          break
+
+    if column != 0:
+      for cColumn in range(column-1, -1, -1):
+        curTop += 1
+        if forest[row][column] <= forest[row][cColumn]:
+          break
+
+    if column != len(forest[row])-1:
+      for cRow in range(row+1, len(forest)):
+        curRight += 1
+        if forest[row][column] <= forest[cRow][column]:
+          break
+
+    if row != len(forest)-1:
+      for cColumn in range(column+1, len(forest[cRow])):
+        curBottom += 1
+        if forest[row][column] <= forest[row][cColumn]:
+          break
+    
+    curScenic = curLeft * curRight * curTop * curBottom
+    if curScenic > bestScenic:
+      bestScenic = curScenic
+
+print(bestScenic)
