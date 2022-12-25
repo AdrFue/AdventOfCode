@@ -1,6 +1,7 @@
 import os 
 import numpy as np
 
+
 class Monkey:
   items = []
   operation = ''
@@ -29,9 +30,6 @@ class Monkey:
     else:
       ms[self.falseMonkey].items.append(item)
 
-
-dir = os.path.dirname(os.path.realpath(__file__))
-lines = []
 
 def createMonkeys():
   ms = []
@@ -63,7 +61,11 @@ def getMonkeyBuissness(ms):
   monkeyBusiness = ics[0] * ics[1]
   return monkeyBusiness
 
-########### Start ############
+
+###################### Start ######################
+dir = os.path.dirname(os.path.realpath(__file__))
+lines = []
+
 with open(dir + "/input.txt", "r") as f:
     for line in f:
       lines.append(line.strip())
@@ -71,7 +73,6 @@ with open(dir + "/input.txt", "r") as f:
 # ## Teil 1 ##
 ms = createMonkeys()
 inspects(1, 20, ms)
-
 
 ## Teil 2 ##
 ms = createMonkeys()
