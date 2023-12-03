@@ -1,6 +1,4 @@
 import os 
-import re
-import pandas as pd
 
 dir = os.path.dirname(os.path.realpath(__file__))
 file_name = ["\\input1Test.txt","\\input1.txt", "\\input2Test.txt", "\\input2.txt"]
