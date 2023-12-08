@@ -2,7 +2,7 @@ import os
 from pprint import pprint
 
 dir = os.path.dirname(os.path.realpath(__file__))
-file_name = ["\\input1myTest.txt","\\input1.txt", "\\input2Test.txt", "\\input2.txt"]
+file_name = ["\\input1Test.txt","\\input1.txt", "\\input2Test.txt", "\\input2.txt"]
 
 lines = []
 with open(dir + file_name[1], "r") as f:
